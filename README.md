@@ -5,6 +5,17 @@
 # Deskripsi Program
 Sistem Manajemen Event Sederhana adalah program yang dibuat untuk mengelola berbagai acara. Program ini dibuat untuk membantu organizer (penyelenggara acara) dalam menambah, melihat, memperbarui, dan menghapus event yang mereka selenggarakan. Program ini menggunakan bahasa pemrograman Java dan mengimplementasikan konsep Object-Oriented Programming (OOP).
 
+1. Package
+   - Model: Di dalam paket ini terdapat kelas-kelas model yang digunakan untuk mendefinisikan Event, baik yang bersifat OnlineEvent maupun OfflineEvent.
+   - Main: Paket utama yang menjalankan aplikasi, termasuk input dari pengguna dan logika kontrol menu utama.
+
+2. Class & Interface
+   - Event (Abstraksi - Abstract Class): Class Event adalah kelas abstrak yang mendefinisikan struktur dasar sebuah event. Kelas ini digunakan sebagai super class dari event-event spesifik seperti OnlineEvent dan OfflineEvent. Menggunakan konsep inheritance di mana subclass dapat mewarisi properti dari Event serta menambahkan properti khusus.
+   - OnlineEvent (Inheritance - Subclass): OnlineEvent adalah subclass dari Event yang menambahkan properti spesifik untuk event online, yaitu platform.
+   - OfflineEvent (Inheritance - Subclass): OfflineEvent adalah subclass dari Event yang memiliki properti khusus seperti kapasitas peserta untuk event offline.
+   - Organizer (Encapsulation, CRUD, Static Method): Class Organizer bertugas mengelola daftar event. Menggunakan konsep encapsulation untuk membungkus data dan menyediakan method getter dan setter. Class ini juga memiliki metode CRUD (Create, Read, Update, Delete) yang mengatur event yang ditambahkan ke daftar events.
+   - EventCRUD (Interface): Interface EventCRUD mengatur operasi dasar untuk event (CRUD) sehingga memungkinkan berbagai kelas untuk mengimplementasikannya. Interface ini digunakan di class Organizer untuk mengimplementasikan method-method CRUD seperti addEvent(), removeEvent(), dll.
+
 # Cara Kerja Program
 Saat program dijalankan, objek organizer dibuat dan beberapa record data event default juga ditambahkan untuk menyediakan data awal yang bisa dilihat dan dikelola pengguna.
 
